@@ -6,11 +6,10 @@ import time
 
 
 # NOTE: flush=True is just for running this script
-# with PythonAnywhere's always-on task.
-# More info: https://help.pythonanywhere.com/pages/AlwaysOnTasks/
+
 print('I am a dumb bot', flush=True)
 
-'
+'#This is where u link CONSUMER_KEY<CONSUMER_SECREAT,ACCESS_KEY,ACCESS_SECREAT to your developer accounts keys
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
@@ -37,8 +36,10 @@ def reply():
 		last_seen_id = mention.id
 		store_last_seen_id(last_seen_id, FILE_NAME)
 		print(str(mention.id) + ' - ' + mention.text)
+		#change apple to whatever text u want to reply
 		if '#apple' in mention.text:
 			print('responding back...', flush=True)
+			#change '#pineapple' to what ever text u reply with
 			api.update_status('@' + mention.user.screen_name + '#pineapple', mention.id)
 
 
