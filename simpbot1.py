@@ -8,12 +8,9 @@ import time
 # NOTE: flush=True is just for running this script
 # with PythonAnywhere's always-on task.
 # More info: https://help.pythonanywhere.com/pages/AlwaysOnTasks/
-print('this is my twitter bot', flush=True)
+print('I am a dumb bot', flush=True)
 
-CONSUMER_KEY='TKxHYdvJUN0MjXcSY7ygVC6Wj'
-CONSUMER_SECRET='9ug4LfWW0ccAm9xB2oMyKwxGTVfM37hIgvVC6fOC8TADlDYdvQ'
-ACCESS_KEY='1281584292414599168-rKTRawCYReEN7K1EtBH5ziZIMKIkTN'
-ACCESS_SECRET='6NKRf0GZWtcSOxwW6hZMmKhBHQJ60poe3OYM8TVjYn7HC'
+'
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
@@ -40,9 +37,9 @@ def reply():
 		last_seen_id = mention.id
 		store_last_seen_id(last_seen_id, FILE_NAME)
 		print(str(mention.id) + ' - ' + mention.text)
-		if '#cancelexamscusat' in mention.text:
+		if '#apple' in mention.text:
 			print('responding back...', flush=True)
-			api.update_status('@' + mention.user.screen_name + '#cancelexamscusat', mention.id)
+			api.update_status('@' + mention.user.screen_name + '#pineapple', mention.id)
 
 
 while True:
